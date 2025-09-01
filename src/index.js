@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { LogIn } from './component/LogIn';
 import { SignUp } from './component/SignUp';
-import { Home } from './component/Home';
+import { Home, homeLoader } from './component/Home';
 import { UpdateTask } from './component/UpdateTask';
 import { AddTask } from './component/AddTask';
 import { Layout } from './component/LayOut';
@@ -17,8 +17,8 @@ const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
-      { element: <Home />, path: "/" },
-      { element: <Home />, path: "/home" },
+      { element: <Home />, path: "/", loader: homeLoader },
+      { element: <Home />, path: "/home", loader: homeLoader },
       { element: <UpdateTask />, path: "/updateTask" },
       { element: <AddTask />, path: "/addTask" }
     ],
